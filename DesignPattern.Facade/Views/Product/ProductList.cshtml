@@ -1,0 +1,29 @@
+﻿@using DesignPattern.Facade.DAL
+@model List<Product>
+
+@{
+    ViewData["Title"] = "ProductList";
+    Layout = "~/Views/Shared/_FacadeLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Stok Sayısı</th>
+        <th>Fiyat</th>
+        <th>Kategori</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Stock</td>
+            <td>@item.Price</td>
+            <td>@item.Category</td>
+        </tr>
+    }
+</table>
+<a href="/Product/AddNewProduct" class="btn btn-primary">Ekle</a>
